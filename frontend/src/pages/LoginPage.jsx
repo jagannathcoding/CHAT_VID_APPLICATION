@@ -131,6 +131,7 @@ const {isPending,error,loginMutation}=useLogin()
               <h2 className="text-xl font-semibold">Connect with language partners worldwide</h2>
               <p className="opacity-70">
                 Practice conversations, make friends, and improve your language skills together
+                Joy Mohunbagan 
               </p>
             </div>
           </div>
