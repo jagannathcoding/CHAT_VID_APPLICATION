@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { signup } from '../lib/api';
+
 const SignUp = () => {
   const [signupData,setSignupData]=useState({
     fullName:"",
