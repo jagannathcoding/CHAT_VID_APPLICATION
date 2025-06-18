@@ -181,14 +181,13 @@ export const LANGUAGES = [
 
 export const LANGUAGE_TO_FLAG = {
   english: "gb",
-  bengali:"ben",
+  bengali:"in",
   spanish: "es",
   french: "fr",
   german: "de",
   mandarin: "cn",
   japanese: "jp",
   korean: "kr",
-  hindi: "in",
   russian: "ru",
   portuguese: "pt",
   arabic: "sa",
