@@ -5,7 +5,7 @@ import { getOutgoingFriendReqs, getRecommendedUsers, getUserFriends, sendFriendR
 import { Link } from "react-router";
 import { CheckCircleIcon, MapPinIcon, UserPlusIcon, UsersIcon } from "lucide-react";
 import FriendCard, { getLanguageFlag } from '../components/FriendCard.jsx';
-import NoFriendsFound from '../components/NoFriends.jsx';
+import NoFriendsFound from '../components/NoFriendsFound.jsx';
 import { capitialize } from '../lib/utils.js';
 const HomePage = () => {
 
@@ -64,9 +64,9 @@ const HomePage = () => {
           <NoFriendsFound />
         ) : (
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
-            {friends.map((friend) => {
-              <FriendCard key={friend._id} friends={friend} />
-            })}
+            {friends.map((friend) => (
+              <FriendCard key={friend._id} friend={friend} />
+            ))}
           </div>
         )}
 

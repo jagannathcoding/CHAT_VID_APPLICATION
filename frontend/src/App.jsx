@@ -10,6 +10,19 @@ import { Toaster } from 'react-hot-toast';
 import PageLoader from './components/PageLoader.jsx';
 import useAuthUser from './hooks/useAuthUser.js';
 import Layout from './components/Layout.jsx';
+
+
+
+import FriendPage from "./pages/FriendPage.jsx";
+
+
+
+
+
+
+
+
+
 import { useThemeStore } from './store/useThemeStore.jsx';
 const App = () => {
 
@@ -81,6 +94,35 @@ const App = () => {
                         <Navigate to="/login" />
                     )}
                 />
+
+
+
+
+
+{/* for freinds */}
+                <Route
+                    path="/friends"
+                    element={
+                        isAuthenticated && isOnboarded ? (
+                            <Layout showSidebar={true}>
+                                <FriendPage />
+                            </Layout>
+                        ) : (
+                            <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
+                        )
+                    }
+                />
+
+
+
+
+
+
+
+
+
+
+
             </Routes>
 
             <Toaster />

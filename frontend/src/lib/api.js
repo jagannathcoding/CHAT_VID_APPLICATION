@@ -72,3 +72,22 @@ export async function getFriendRequests(){
 export async function acceptFriendRequest(requestId){
     const response=await axiosInstance.put(`/users/friend-request/${requestId}/accept`)
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Ekhon for freinds */
+export async function getFriends() {
+  const response = await axiosInstance.get("/friends");
+  return response.data;
+}
+
+
+
