@@ -14,7 +14,7 @@ import { useThemeStore } from './store/useThemeStore.jsx';
 const App = () => {
 
     const { isLoading, authUser } = useAuthUser();
-    const{theme}=useThemeStore();
+    const { theme } = useThemeStore();
 
     const isAuthenticated = Boolean(authUser);
     const isOnboarded = authUser?.isOnboarded
@@ -33,9 +33,9 @@ const App = () => {
                 <Route path="/"
                     element={
                         isAuthenticated && isOnboarded ? (
-                           <Layout showSidebar={true}>
-                             <HomePage />
-                           </Layout>
+                            <Layout showSidebar={true}>
+                                <HomePage />
+                            </Layout>
                         ) : (
                             <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
                         )
@@ -59,7 +59,14 @@ const App = () => {
 
                 <Route
                     path="/notifications"
-                    element={isAuthenticated ? <NotificationsPage /> : <Navigate to="/login" />} />
+                    element={isAuthenticated && isOnboarded ? (
+                        <Layout showSidebar={true}>
+                            <NotificationsPage />
+                        </Layout>
+                    ) : (
+                        <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
+                    )}
+                />
 
                 <Route path="/call" element={isAuthenticated ? <CallPage /> : <Navigate to="/login" />} />
                 <Route path="/chat" element={isAuthenticated ? <ChatPage /> : <Navigate to="/login" />} />
