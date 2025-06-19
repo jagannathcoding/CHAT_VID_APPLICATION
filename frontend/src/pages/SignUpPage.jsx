@@ -37,7 +37,7 @@ return <div className="h-screen flex items-center justify-center p-4 sm:p-6 md:p
     <ShipWheelIcon className="size-9 text-primary"/>
     <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider">
 
-      Streamify
+      Stream
     </span>
     </div>
 
