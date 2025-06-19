@@ -36,13 +36,30 @@ const OnboardingPage = () => {
     onboardingMutation(formState);
   }
 
- const handleRandomAvatar = () => {
-    const idx = Math.floor(Math.random() * 100) + 1; // 1-100 included
+  
+ /*const handleRandomAvatar = () => {
+    const idx = Math.floor(Math.random() * 100) + 1; 
     const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
-
     setFormState({ ...formState, profilePic: randomAvatar });
     toast.success("Random profile picture generated!");
-  };
+  };*/
+
+
+
+const handleRandomAvatar = () => {
+  // Generate a random string seed 
+  const randomSeed = Math.random().toString(36).substring(2, 10);
+
+  // Use DiceBear API to get a bottts (robot-style) avatar
+  const randomAvatar = `https://api.dicebear.com/7.x/bottts/svg?seed=${randomSeed}`;
+
+  setFormState({ ...formState, profilePic: randomAvatar });
+   toast.success("Random profile picture generated!");
+};
+
+  
+
+
 
 
 
